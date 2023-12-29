@@ -2,7 +2,7 @@
 </script>
 <template>
   <div >
-    <iframe src="http://localhost:18878" frameborder="0" class="full" id="iframe"></iframe>
+    <iframe src="http://127.0.0.1:18878" frameborder="0" class="full" id="iframe"></iframe>
   </div>
 </template>
 

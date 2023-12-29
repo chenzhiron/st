@@ -1,0 +1,44 @@
+{
+    "productName": "ElectronVite4Vue3",
+    "appId": "cc.xiaoyan.electron-vite4-vue3",
+    "copyright": "Copyright © 2023-present Andy",
+    "compression": "maximum",
+    "asar": true, // 打包格式压缩
+    "directories": {
+        "output": "release/${version}"  // 打包输出目录
+    },
+    // 配置extraResources后，electron-builder会在打包时将extraResources中指定的文件复制到打包后应用程序的根目录/resources文件夹下
+    /*"extraResources": [
+        {
+            "from": "./resource",
+            "to": "resource"
+        }
+    ],*/
+    "nsis": {
+        "oneClick": false,
+        "allowToChangeInstallationDirectory": true,
+        "perMachine": true,
+        "deleteAppDataOnUninstall": true,
+        "createDesktopShortcut": true,
+        "createStartMenuShortcut": true,
+        "shortcutName": "ElectronVite4Vue3"
+    },
+    "win": {
+        "icon": "./resource/shortcut.ico",
+        "artifactName": "${productName}-v${version}-${platform}-${arch}-setup.${ext}",
+        "target": [
+            {
+                "target": "nsis",
+                "arch": ["ia32"]
+            }
+        ]
+    },
+    "mac": {
+        "icon": "./resource/shortcut.icns",
+        "artifactName": "${productName}-v${version}-${platform}-${arch}-setup.${ext}"
+    },
+    "linux": {
+        "icon": "./resource",
+        "artifactName": "${productName}-v${version}-${platform}-${arch}-setup.${ext}"
+    }
+}
