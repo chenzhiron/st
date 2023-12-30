@@ -1,0 +1,4 @@
+Python:
+  executable: ./toolkit/python.exe
+Web:
+  url: http://127.0.0.1:18878
