@@ -1,6 +1,6 @@
 // @ts-nocheck
 const { app, BrowserWindow, ipcMain } = require("electron")
-const { join } = require("path")
+const path = require('path')
 const {readYAML} = require("./src/utils/regyaml.js")
 
 const {PyShell} = require("./src/utils/pyshell.js")
@@ -12,18 +12,17 @@ const webPort = yarmlData.Web.url
 
 
 let st = PyShell(
-    "main.py",
-    {
-      mode: "text",
-      pythonPath: join("G:\\czr\\demo\\auto_stzb", yarmlData.Python.executable),
-      pythonOptions: ["-u"],
-      scriptPath: "G:\\czr\\demo\\auto_stzb",
-    },
-    msg => {
-      console.log("msg", msg)
-    },
-    err => {
-      console.log("err", err)
+  "main.py",
+  {
+    mode: "text",
+    pythonPath: path.join(path.cwd(), yarmlData.Python.executable),
+    pythonOptions: ["-u"],
+  },
+  msg => {
+    console.log("msg", msg)
+  },
+  err => {
+    console.log("err", err)
   }
 )
 

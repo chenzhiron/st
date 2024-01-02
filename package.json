@@ -1,6 +1,11 @@
 {
   "name": "st",
   "private": true,
+  "description": "st assist",
+  "author": {
+    "name": "czr",
+    "email": "2380723585@qq.com"
+  },
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
